@@ -173,8 +173,23 @@ section.featured-destination div.container div.boxs{
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 2%;
   background-color: var(--white-color);
    display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem;
+}
+section.featured-destination div.container div.boxs div.box{
+  overflow: hidden;
+  background-color: var(--yellow-color);
+   padding-bottom: 60%;
+   /* margin-bottom: 20%; */
+}
+section.featured-destination div.container div.boxs div.box img{
+  width: 73%;
+  display: flex;
+ justify-content: center;
+ align-items: center;
+ margin: 10%;
+ border-radius: 20px;
 }
