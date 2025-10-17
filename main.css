@@ -8,6 +8,7 @@
     --yellow-color : #a59008f1;
     --dark-color : #000;
     --white-color: #fff;
+     --yellow-color2 :rgba(78, 68, 8, 0.945)1;
 
 }
 body {
@@ -107,31 +108,33 @@ body {
 div.hero-page{
 width: 100%;
 height: 100%;
+/* top: 14%; */
+padding-bottom: 23%;
+background-image: url('./images/backg-photo.webp');
+  background-size: cover;      
+  background-repeat: no-repeat;  
+  background-position: center;   
+  background-attachment: fixed;  
 }
 div.hero-page div.container{
-    margin-top: 10%;
+    padding-top: 15%;
     width: 100%;
     height: 100%;
    display: inline-block;
-    color: var(--white-color);
-    background-image: url('./images/backg-photo.webp');
-      background-size: cover;      
-  background-repeat: no-repeat;  
-  background-position: center;   
-  background-attachment: fixed; 
 
 }
 
 
 
-div.hero-page div.container h2{
+div.hero-page div.container h3{
 font-size: 37px;
-color: var(--yellow-color);
+color: var(--yellow-color2);
 margin-left: 7%;
 }
 div.hero-page div.container p{
   font-size: 20px;
   margin-left: 7%;
+  color: var(--white-color);
 }
 div.hero-page div.container button{
   width: 140px;
