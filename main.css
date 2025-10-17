@@ -114,8 +114,16 @@ div.hero-page div.container{
     height: 100%;
    display: inline-block;
     color: var(--white-color);
+    background-image: url('./images/backg-photo.webp');
+      background-size: cover;      
+  background-repeat: no-repeat;  
+  background-position: center;   
+  background-attachment: fixed; 
 
 }
+
+
+
 div.hero-page div.container h2{
 font-size: 37px;
 color: var(--yellow-color);
@@ -123,7 +131,7 @@ margin-left: 7%;
 }
 div.hero-page div.container p{
   font-size: 20px;
-margin-left: 7%;
+  margin-left: 7%;
 }
 div.hero-page div.container button{
   width: 140px;
@@ -134,8 +142,10 @@ div.hero-page div.container button{
   color:var(--white-color);
   border-style: none;
   cursor: pointer;
+  margin-left: 7%;
 }
 div.hero-page div.container button:hover{
 background-color: var(--white-color);
 color: var(--dark-color);
+background-image: url('./images/backg-photo.webp');
 }
