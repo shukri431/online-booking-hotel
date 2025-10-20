@@ -203,3 +203,7 @@ section.featured-destination div.container div.boxs div.box div.card-content p{
   color: var(--yellow-color);
   font-size: 20px;
 }
+
+h1{
+  color: var(--white-color);
+}
