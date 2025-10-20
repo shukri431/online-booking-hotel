@@ -203,7 +203,40 @@ section.featured-destination div.container div.boxs div.box div.card-content p{
   color: var(--yellow-color);
   font-size: 20px;
 }
-
-h1{
-  color: var(--white-color);
+/* style amenities */
+section.Amenities{
+  width: 100%;
+  height: 100%;
+  margin-top: 2%;
 }
+section.Amenities div.container{
+    width: 100%;
+  height: 100%;
+  margin: 0px;
+}
+section.Amenities div.container h1{
+  color: var(--white-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.Amenities div.container p{
+  color: var(--white-color);
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.video .video-background {
+  width: 90%;
+  height: 67%;
+  object-fit: cover;
+  border-radius:60px;
+   margin-top: 17%;
+  position: absolute;
+  /* top: 50%; */
+  left: 49%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
