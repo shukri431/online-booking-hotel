@@ -237,6 +237,9 @@ section.Amenities div.container p{
   left: 49%;
   transform: translate(-50%, -50%);
   z-index: -1;
-   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
