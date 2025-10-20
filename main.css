@@ -238,8 +238,16 @@ section.Amenities div.container p{
   transform: translate(-50%, -50%);
   z-index: -1;
     background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
-  display: flex;
+
+}
+section.Amenities div.container div.video div.content{
+  display: inline-block;
   justify-content: center;
   align-items: center;
+padding: 10% 15%;
+}
+section.Amenities div.container div.video div.content h3{
+  color: var(--white-color);
+  font-weight: bold;
 }
 
