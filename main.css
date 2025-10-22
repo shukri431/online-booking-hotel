@@ -226,6 +226,9 @@ section.Amenities div.container h1{
   justify-content: center;
   align-items: center;
 }
+section.Amenities div.container h1 span{
+  color: var(--yellow-color);
+}
 section.Amenities div.container p{
   color: var(--white-color);
     display: flex;
@@ -266,6 +269,10 @@ section.special-offers div.container h2{
 color: var(--yellow-color);
 left: 42%;
 }
+/* section.special-offers div.container{
+  width: 100%;
+  height: 100%;
+} */
 section.special-offers div.container h4{
   color: var(--white-color);
 margin-left: 26%;
@@ -307,4 +314,22 @@ section.special-offers div.container div.cards div.card p{
     display: flex;
   justify-content: center;
   align-items: center;
+}
+section.special-offers div.container button{
+ width: 180px;
+  height: 44px;
+  margin-top: 3%;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 39%;
+  margin-bottom: 5%;
+  cursor: pointer;
+  border-radius: 24px;
+  border-style: none;
+
+}
+section.special-offers div.container button:hover{
+ background-color: var(--yellow-color);
+ color: var(--dark-color);
 }
