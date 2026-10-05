@@ -5,18 +5,30 @@
 }
 
 :root{
-    --yellow-color : #a59008f1;
-    --dark-color : #000;
-    --white-color: #fff;
-     --yellow-color2 :rgba(78, 68, 8, 0.945)1;
-
+  /* Palette extracted from your design image */
+  --color-bg: #DADADA;        /* background */
+  --color-surface: #C2BAB6;   /* cards, panels */
+  --color-primary: #95847A;   /* main brand / focal color */
+  --color-secondary: #AFA39D; /* supporting color */
+  --color-accent: #95847A;    /* accent (same as primary here) */
+  --color-muted: #D6D5D5;     /* subtle backgrounds / placeholders */
+  --color-border: #DEDAD6;    /* hairline dividers */
+  --color-foreground: #F1F0EF;/* very light surfaces */
+  --color-text: #1A1A1A;      /* primary readable text color (not extracted) */
+  --shadow-color: rgba(149, 132, 122, 0.2);
+  --shadow2-color: rgba(149, 132, 122, 0.1);
+  --shadow3-color: rgba(149, 132, 122, 0.1);
+}
+@font-face{
+    font-family: "poppins";
+    src: url(FONTS/Poppins-Bold.ttf);
 }
 body {
   font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
-  background-color: var(--dark-color);
+  background-color: var(--color-text);
 }
 
 .container {
@@ -46,16 +58,49 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 70px;
-  background-color: var(--dark-color);
+  background-color: var(--color-text);
 }
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var\(--primary-color\);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  margin-left: 20px;
+}
+
+.theme-toggle:hover {
+  background: rgba(241, 214, 35, 0.1);
+  transform: scale(1.1);
+}
+
+.theme-toggle i {
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover i {
+  transform: rotate(360deg);
+}
+
 
 .nav-logo {
   display: flex;
   align-items: center;
   font-size: 1.8rem;
   font-weight: 700;
-  color: var(--yellow-color);
+  color: var(--color-primary);
   text-decoration: none;
+  font-family: "poppins";
 }
 
 .nav-logo i {
@@ -71,23 +116,23 @@ body {
 }
 
 .nav-pgs span {
-  color: var(--yellow-color);
+  color: var\(--primary-color\);
 }
 
 .nav-link {
   text-decoration: none;
-  color:var(--white-color);
+  color:var(--color-bg);
   font-weight: 500;
   position: relative;
   transition: var(--transition);
 }
 .nav-link li a {
-    color: var(--white-color);
+    color: var(--color-bg);
 }
 
 .nav-link:hover,
 .nav-link.active {
-  color: var(--yellow-color);
+  color: var\(--primary-color\);
 }
 
 .nav-link::after {
@@ -97,7 +142,7 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background:var(--yellow-color);
+  background:var\(--primary-color\);
   transition: var(--transition);
 }
 
@@ -129,29 +174,77 @@ div.hero-page div.container{
 
 div.hero-page div.container h3{
 font-size: 37px;
-color: var(--yellow-color2);
+color: var\(--primary-color\);
 margin-left: 7%;
 }
 div.hero-page div.container p{
   font-size: 20px;
   margin-left: 7%;
-  color: var(--white-color);
+  color: var(--color-bg);
 }
 div.hero-page div.container button{
   width: 140px;
   height: 44px;
   border-radius: 26px;
   margin-top: 2%;
-  background-color: var(--yellow-color);
-  color:var(--white-color);
+  background-color: var\(--primary-color\);
+  color:var(--color-bg);
   border-style: none;
   cursor: pointer;
   margin-left: 7%;
 }
 div.hero-page div.container button:hover{
-background-color: var(--white-color);
-color: var(--dark-color);
+background-color: var(--color-bg);
+color: var(--color-text);
 background-image: url('./images/backg-photo.webp');
+}
+.hero-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.hero-buttons {
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  animation: fadeInUp 1s ease-out 0.4s both;
+  margin-top: 5%;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: var\(--primary-color\);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-primary {
+   background: var(--color-text);
+  box-shadow:var(--color-muted);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--color-primary);
+}
+
+.btn-secondary {
+  background: var(--color-text);
+  border: 2px solid var(--color-secondary);
+  color: var(--color-bg);
+}
+
+.btn-secondary:hover {
+  color: var(--color-bg);
+  transform: translateY(-3px);
 }
 /* Featured destination style */
 section.featured-destination{
@@ -164,7 +257,7 @@ section.featured-destination div.container{
   height: 100%;
 }
 section.featured-destination div.container h2{
-  color: var(--white-color);
+  color: var(--color-bg);
   margin-left: 38%;
   font-size: 27px;
 }
@@ -201,12 +294,12 @@ section.featured-destination div.container div.boxs div.box div.card-content{
   margin-left: 25%;
 }
 section.featured-destination div.container div.boxs div.box div.card-content h3{
- color: var(--white-color);
+ color: var(--color-bg);
  margin-top: 2%;
 font-size: 25px;
 }
 section.featured-destination div.container div.boxs div.box div.card-content p{
-  color: var(--yellow-color);
+  color: var\(--primary-color\);
   font-size: 20px;
 }
 /* style amenities */
@@ -221,16 +314,16 @@ section.Amenities div.container{
   margin: 0px;
 }
 section.Amenities div.container h1{
-  color: var(--white-color);
+  color: var(--color-bg);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 section.Amenities div.container h1 span{
-  color: var(--yellow-color);
+  color: var\(--primary-color\);
 }
 section.Amenities div.container p{
-  color: var(--white-color);
+  color: var(--color-bg);
     display: flex;
   justify-content: center;
   align-items: center;
@@ -256,7 +349,7 @@ section.Amenities div.container div.video div.content{
 padding: 10% 15%;
 }
 section.Amenities div.container div.video div.content h3{
-  color: var(--white-color);
+  color: var(--color-bg);
   font-weight: bold;
 }
 /* style special offers */
@@ -266,15 +359,12 @@ section.special-offers{
    margin-top: 5%;
 }
 section.special-offers div.container h2{
-color: var(--yellow-color);
+color: var\(--primary-color\);
 left: 42%;
 }
-/* section.special-offers div.container{
-  width: 100%;
-  height: 100%;
-} */
+
 section.special-offers div.container h4{
-  color: var(--white-color);
+  color: var(--color-bg);
 margin-left: 26%;
 }
 section.special-offers div.container div.cards{
@@ -292,7 +382,7 @@ section.special-offers div.container div.cards div.card{
   overflow: hidden;
    padding-bottom: 30%;
    border-radius: 24px ;
-    border: 1px solid var(--yellow-color);
+    border: 1px solid var\(--primary-color\);
    margin-top: 6%;
   cursor: pointer;
    transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -302,14 +392,14 @@ section.special-offers div.container div.cards div.card:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); 
 }
 section.special-offers div.container div.cards div.card h3{
-  color: var(--yellow-color);
+  color: var\(--primary-color\);
   font-size: 34px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 section.special-offers div.container div.cards div.card p{
-  color: var(--white-color);
+  color: var(--color-bg);
   font-size: 23px;
     display: flex;
   justify-content: center;
@@ -330,6 +420,966 @@ section.special-offers div.container button{
 
 }
 section.special-offers div.container button:hover{
- background-color: var(--yellow-color);
- color: var(--dark-color);
+ background-color: var\(--primary-color\);
+ color: var(--color-text);
 }
+.footer {
+  background: linear-gradient(135deg, #000 0%, #1a1a1a 50%, #000 100%);
+  color: var(--color-bg);
+  padding: 4rem 0 2rem;
+  margin-top: 10%;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, var(--color-muted) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%,  var(--color-muted) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.footer .container {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-brand h3 {
+  color: var\(--primary-color\);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.footer-brand p:first-of-type {
+  color: var\(--primary-color\);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.footer-brand p:last-of-type {
+  color: var(--color-bg);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.footer-links h3,
+.footer-social h3 {
+  color: var\(--primary-color\);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-links ul li a {
+  color: var(--color-bg);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.footer-links ul li a::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var\(--primary-color\);
+  transition: width 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: var\(--primary-color\);
+  transform: translateX(5px);
+}
+
+.footer-links ul li a:hover::before {
+  width: 100%;
+}
+
+.footer-social .social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.footer-social .social-links a {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var\(--primary-color\), rgba(241, 214, 35, 0.8));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: var(--color-text);
+  font-size: 1.2rem;
+  box-shadow: 0 4px 15px rgba(241, 214, 35, 0.3);
+}
+
+.footer-social .social-links a:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 25px rgba(241, 214, 35, 0.5);
+  background: linear-gradient(135deg, rgba(241, 214, 35, 0.8), var\(--primary-color\));
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(241, 214, 35, 0.2);
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: var(--color-bg);
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* About Page Styles */
+section.about{
+  width: 100%;
+  height: 100%;
+ margin-top: 8%;
+}
+section.about div.container h1{
+color: var\(--primary-color\);
+font-family: "poppins";
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.about div.container{
+  width: 100%;
+  height: 100%;
+  
+}
+section.about div.container div.sawir{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.about div.container div.sawir img{
+  width: 55%;
+}
+section.vision-mission{
+height: 100%;
+width: 100%;
+margin-top: 2%;
+}
+section.vision-mission div.container h1{
+  color: var\(--primary-color\);
+display: flex;
+justify-content: center;
+align-items: center;
+font-family: "poppins";
+}
+section.vision-mission div.container p{
+ color: var\(--primary-color\);
+display: flex;
+justify-content: center;
+align-items: center;
+font-family: "poppins";
+}
+section.vision-mission div.container .boxs {
+width: 100%;
+height: 100%;
+background-color: var(--color-text);
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px;
+}
+section.vision-mission div.container .boxs .box-left,
+section.vision-mission div.container .boxs .box-right {
+flex: 1;
+padding: 20px;
+margin: 10px;
+background-color: var\(--primary-color\);
+border-radius: 10px;
+text-align: center;
+min-height: 200px;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+section.vision-mission div.container .boxs .box-left:hover,
+section.vision-mission div.container .boxs .box-right:hover{
+    transform: translateY(-10px) scale(1.03); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); 
+}
+section.vision-mission div.container .boxs .box-left h2,
+section.vision-mission div.container .boxs .box-right h2{
+  font-family: "poppins";  
+}
+section.vision-mission div.container .boxs .box-left p,
+section.vision-mission div.container .boxs .box-right p{
+  color: var(--color-text);
+}
+/* rooms and suites style */
+section.rooms-suites{
+  width: 100%;
+  height: 100%;
+  margin-top: 8%;
+  /* background-color: var\(--primary-color\); */
+}
+section.rooms-suites div.container h2{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-size: 38px;
+ font-family: "poppins";
+ color: var\(--primary-color\);
+}
+section.rooms-suites div.container p{
+  display: flex;
+ justify-content: center;
+ align-items: center;
+ font-size: 26px;
+ font-family: "poppins";
+ color: var(--color-bg);
+}
+.options {
+  display: flex;
+  gap: 10rem;
+  background-color: var(--color-text);
+  margin-top: 3%;
+}
+
+.options select {
+  background-color: var(--color-text);
+  color:var(--color-bg);
+  border: 1px solid #333;
+  border-radius: 4px;
+  padding: 10px 40px 10px 15px;
+  appearance: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.options select:hover {
+  border-color: #666;
+}
+.options select:focus {
+  outline: none;
+  border-color: #888;
+}
+section.rooms-suites div.container div.cards{
+ width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 5rem;
+ margin-top: 2%;
+}
+section.rooms-suites div.container div.cards div.card img{
+  width: 100%;
+}
+section.rooms-suites div.container div.cards div.card{
+  background-color:var(--color-secondary);
+  overflow: hidden;
+   padding-bottom: 30%;
+   border-radius: 24px ;
+   margin-top: 6%;
+  cursor: pointer;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+section.rooms-suites div.container div.cards div.card h3{
+  color: var\(--primary-color\);
+margin-left: 5%;
+font-size: 27px;
+font-family: "poppins";
+}
+section.rooms-suites div.container div.cards div.card p{
+  font-size: 18px;
+  font-family: "poppins";
+}
+section.rooms-suites div.container div.cards div.card span{
+  color: var\(--primary-color\);
+  margin-left: 5%;
+ font-size: 26px;
+ font-family: "poppins";
+}
+section.rooms-suites div.container div.cards div.card button{
+  width: 150px;
+  height: 40px;
+  margin-top: 8%;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20%;
+  cursor: pointer;
+  border-radius: 24px;
+  border-style: none;
+}
+section.rooms-suites div.container div.cards div.card button:hover{
+  background-color: var(--color-primary);
+}
+
+/* Booking Page Styles */
+section.book {
+  width: 100%;
+  height: 100vh;
+  margin-top: 8%;
+  padding: 4rem 0;
+  background: linear-gradient(135deg, var(--color-text) 0%, rgba(26, 26, 26, 0.9) 50%, var(--color-text) 100%);
+  position: relative;
+}
+section.book h2{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ color: var\(--primary-color\);
+ font-family: "poppins";
+ font-size: 28px;
+}
+
+section.book::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, var(--color-muted) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, var(--color-muted) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+section.book .container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.card-right {
+  flex: 1;
+  max-width: 500px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(241, 214, 35, 0.2);
+  transition: all 0.3s ease;
+}
+
+.card-right:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(241, 214, 35, 0.1);
+}
+
+.card-right img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 15px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card-right h2 {
+  color: var\(--primary-color\);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: "poppins";
+}
+
+.card-right span {
+  color: var\(--primary-color\);
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.card-left {
+  flex: 1;
+  max-width: 500px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(241, 214, 35, 0.05));
+  padding: 2.5rem;
+  border-radius: 20px;
+  border: 2px solid rgba(241, 214, 35, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-left::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(241, 214, 35, 0.1) 50%, transparent 70%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.card-left:hover::before {
+  opacity: 1;
+}
+
+.card-left:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(241, 214, 35, 0.1);
+}
+
+.card-left h3 {
+  color: var\(--primary-color\);
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: "poppins";
+  font-weight: 600;
+}
+
+.booking-form {
+  margin-bottom: 1.5rem;
+}
+
+.booking-form input,
+.booking-form select {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid rgba(241, 214, 35, 0.3);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--color-bg);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.booking-form input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+  outline: none;
+  border-color: var\(--primary-color\);
+  box-shadow: 0 0 10px rgba(241, 214, 35, 0.3);
+}
+
+.booking-form select {
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+.card-left form button {
+  width: 100%;
+  padding: 1rem;
+  background: var\(--primary-color\);
+  color: var(--color-text);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.card-left form button:hover {
+  background: rgba(241, 214, 35, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(241, 214, 35, 0.3);
+}
+section.book div.container p {
+  color: var\(--primary-color\);
+  font-family: "poppins";
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 2rem 0;
+  font-weight: 600;
+}
+
+section.book div.container button {
+  display: block;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  background: var\(--primary-color\);
+  color: var(--color-text);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+section.book div.container button:hover {
+  background: rgba(241, 214, 35, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(241, 214, 35, 0.3);
+}
+
+/* Login Page Styles */
+section.login {
+  width: 100%;
+  height: 100vh;
+  margin-top: 8%;
+  padding: 4rem 0;
+  background: linear-gradient(135deg, var(--color-text) 0%, rgba(26, 26, 26, 0.9) 50%, var(--color-text) 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section.login::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, var(--color-muted) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, var(--color-muted) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+section.login .container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section.login h2 {
+  color: var\(--primary-color\);
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-family: "poppins";
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.boxs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.box-right {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(241, 214, 35, 0.05));
+  padding: 3rem;
+  border-radius: 20px;
+  border: 2px solid rgba(241, 214, 35, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.box-right::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(241, 214, 35, 0.1) 50%, transparent 70%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.box-right:hover::before {
+  opacity: 1;
+}
+
+.box-right:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(241, 214, 35, 0.1);
+}
+
+.box-right h2 {
+  color: var\(--primary-color\);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-family: "poppins";
+  font-weight: 600;
+  text-align: center;
+}
+
+.box-right form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.box-right label {
+  color: var(--color-bg);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.box-right input {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid rgba(241, 214, 35, 0.3);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--color-bg);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.box-right input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.box-right input:focus {
+  outline: none;
+  border-color: var\(--primary-color\);
+  box-shadow: 0 0 10px rgba(241, 214, 35, 0.3);
+}
+
+.box-right button {
+  width: 100%;
+  padding: 1rem;
+  background: var\(--primary-color\);
+  color: var(--color-text);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.box-right button:hover {
+  background: rgba(241, 214, 35, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(241, 214, 35, 0.3);
+}
+
+.box-left {
+  text-align: center;
+  padding: 2rem;
+}
+
+.box-left h2 {
+  color: var\(--primary-color\);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  font-family: "poppins";
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.box-left p {
+  color: var(--color-bg);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Contact Page Styles */
+section.contact {
+  width: 100%;
+  height: 100%;
+  margin-top: 8%;
+  padding: 4rem 0;
+}
+
+section.contact div.container h1 {
+  color: var\(--primary-color\);
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-family: "poppins";
+}
+
+section.contact div.container p {
+  color: var(--color-bg);
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid rgba(241, 214, 35, 0.2);
+  transition: all 0.3s ease;
+}
+
+.info-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(241, 214, 35, 0.1);
+}
+
+.info-item i {
+  font-size: 2rem;
+  color: var\(--primary-color\);
+}
+
+.info-item h3 {
+  color: var\(--primary-color\);
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.info-item p {
+  color: var(--color-bg);
+  margin: 0;
+}
+
+.contact-form {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(241, 214, 35, 0.2);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid rgba(241, 214, 35, 0.3);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--color-bg);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var\(--primary-color\);
+  box-shadow: 0 0 10px rgba(241, 214, 35, 0.3);
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 1rem;
+  background: var\(--primary-color\);
+  color: var(--color-text);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: rgba(241, 214, 35, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(241, 214, 35, 0.3);
+}
+
+/* Register Page Styles */
+section.register {
+  width: 100%;
+  height: 100vh;
+  margin-top: 8%;
+  padding: 4rem 0;
+  background: linear-gradient(135deg, var(--color-text) 0%, rgba(26, 26, 26, 0.9) 50%, var(--color-text) 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section.register::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, var(--color-muted) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, var(--color-muted) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+section.register .container {
+  position: relative;
+  z-index: 1;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section.register h2 {
+  color: var\(--primary-color\);
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-family: "poppins";
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+section.register form {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(241, 214, 35, 0.05));
+  padding: 3rem;
+  border-radius: 20px;
+  border: 2px solid rgba(241, 214, 35, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+section.register form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(241, 214, 35, 0.1) 50%, transparent 70%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+section.register form:hover::before {
+  opacity: 1;
+}
+
+section.register form:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(241, 214, 35, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid rgba(241, 214, 35, 0.3);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--color-bg);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var\(--primary-color\);
+  box-shadow: 0 0 10px rgba(241, 214, 35, 0.3);
+}
+
+section.register button {
+  width: 100%;
+  padding: 1rem;
+  background: var\(--primary-color\);
+  color: var(--color-text);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+section.register button:hover {
+  background: rgba(241, 214, 35, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(241, 214, 35, 0.3);
+}
+
+section.register p {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--color-bg);
+}
+
+section.register p a {
+  color: var\(--primary-color\);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+section.register p a:hover {
+  text-decoration: underline;
+}
+

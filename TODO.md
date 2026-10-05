@@ -1,0 +1,6 @@
+- [x] Update CSS variables in :root to new vibrant palette (indigo primary, pink accent)
+- [x] Replace hardcoded yellow color values with new variables
+- [x] Verify color changes across the site
+- [x] Update color scheme to match design image palette
+- [x] Replace old variable references with new color variables
+- [x] Test updated color scheme on website

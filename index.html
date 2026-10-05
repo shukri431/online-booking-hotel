@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>online booking hotel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="main.css">
+    <script src="theme.js" defer></script>
 </head>
 <body>
     <!-- navigation -->
@@ -19,25 +21,37 @@
             <a href="index.html" class="nav-link active">Home</a>
           </li>
           <li class="nav-pg actions">
-            <a href="login.html" class="nav-link">About</a>
+            <a href="about.html" class="nav-link">About</a>
           </li>
           <li class="nav-pg actions">
-            <a href="signup.html" class="nav-link">Rooms</a>
+            <a href="Rooms.html" class="nav-link">Rooms</a>
           </li>
-          <li class="nav-pg User">
-            <a href="signup.html" class="nav-link">contact</a>
+          <li class="nav-pg actions">
+            <a href="contact.html" class="nav-link">contact</a>
+          </li>
+           <li class="nav-pg actions">
+            <a href="login.html" class="nav-link">Login</a>
           </li>
         </ul>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+          <i class="fas fa-moon"></i>
+        </button>
         </div>
     </nav>
-
-        <!-- hero-section -->
+<!-- hero-section -->
          <div class="hero-page">
             <div class="container">
                 <h3>LUXURY <br> HOTEL BOOKING</h3>
                 <P>Experience the epitome of luxury and control with<br> our exgulatic selection of hotels. book your stay <br>
                 and indulge in unparalleted elegence</P>
-                <button>Book Now </button>
+               <div class="hero-buttons">
+         <a href="register.html" class="btn btn-secondary reg">
+            <i class="fas fa-user-plus"></i> Register Now
+          </a>
+          <a href="Booking.html" class="btn btn-secondary log">
+            <i class="fa-solid fa-right-from-bracket"></i>Booking
+          </a>
+        </div>
             </div>
          </div>
          <!-- featured destination -->
@@ -74,10 +88,10 @@
           <div class="container">
             <h1> Amenities <span> And Services</span></h1>
             <p>Discover a world of luxury designed for your comfort.From fine<br> dining experiences to spa indulgence,every services is crafted to perfection</p>
-            <!-- <div class="video">
+            <div class="video">
            <video autoplay muted loop playsinline class="video-background">
-    <source src="./images/video-back.mp4" type="video/mp4">
-</video>  video-ga linkigisa ayaan soo galinaya madaama uu diiday github dowwnloadska -->
+    <source src="https://cdn.pixabay.com/video/2024/11/07/240315_large.mp4" type="video/mp4">
+</video>
   <div class="content">
          <h3>🥂 Fine Dining & Wine Bar</h3>
          <h3>💆‍♀ Spa & Wellness Center</h3>
@@ -112,10 +126,37 @@
                <button>VIEW ALL OFFERS</button>
           </div>
         </section>
-        <section class="footer">
+        <footer class="footer">
           <div class="container">
-            <h2></h2>
+            <div class="footer-content">
+              <div class="footer-brand">
+                <h3>LUXURY HOTEL</h3>
+                <p>LUXURY REDEFINED</p>
+                <p>Experience unparalleled elegance and comfort in our world-class accommodations.</p>
+              </div>
+              <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                  <li><a href="index.html">HOME</a></li>
+                  <li><a href="about.html">ABOUT</a></li>
+                  <li><a href="Rooms.html">ROOMS</a></li>
+                  <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+              </div>
+              <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                  <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                  <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="footer-bottom">
+              <p>&copy; 2024 Luxury Hotel. All rights reserved.</p>
+            </div>
           </div>
-        </section>
+        </footer>
 </body>
 </html>
